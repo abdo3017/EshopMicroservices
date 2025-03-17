@@ -1,6 +1,5 @@
 ﻿
 using CatalogAPI.Products.GetProductsByCategory;
-using Microsoft.Extensions.Logging;
 
 namespace CatalogAPI.Products.UpdateProduct
 {

@@ -1,4 +1,6 @@
 ﻿
+using CatalogAPI.Products.GetProductsByCategory;
+
 namespace CatalogAPI.Products.CreateProduct
 {
 
@@ -6,11 +8,12 @@ namespace CatalogAPI.Products.CreateProduct
     public record CreateProductResult(Guid Id);
 
 
-    public class CreateProductCommandHandler(IDocumentSession session) : ICommandHandler<CreateProductCommand, CreateProductResult>
+    public class CreateProductCommandHandler(IDocumentSession session, ILogger<GetProductsByCategoryQuery> logger) : ICommandHandler<CreateProductCommand, CreateProductResult>
     {
 
         public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
         {
+            logger.LogInformation($"CreateProductCommandHandler.Handle called with Command: {command}");
             // create product entity from command object
             var product = new Product
             {
