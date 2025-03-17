@@ -1,4 +1,4 @@
-﻿namespace CatalogAPI.Products.CreateProduct
+﻿namespace CatalogAPI.Products.GetProductById
 {
 
     public record GetProductByIdResponse(Product Products);

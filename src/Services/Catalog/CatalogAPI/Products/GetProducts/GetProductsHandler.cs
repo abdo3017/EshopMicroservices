@@ -1,5 +1,5 @@
 ﻿
-namespace CatalogAPI.Products.CreateProduct
+namespace CatalogAPI.Products.GetProducts
 {
 
     public record GetProductsQuery() : IQuery<GetProductsResult>;
