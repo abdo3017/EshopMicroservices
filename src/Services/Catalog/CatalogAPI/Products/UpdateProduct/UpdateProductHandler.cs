@@ -29,7 +29,7 @@ namespace CatalogAPI.Products.UpdateProduct
             var product = await session.LoadAsync<Product>(command.Id, cancellationToken).ConfigureAwait(false);
             if (product is null)
             {
-                throw new ProductNotFoundException();
+                throw new ProductNotFoundException(command.Id);
             }
             // update  product entity from command object
             product.Name = command.Name;
