@@ -11,8 +11,6 @@ namespace CatalogAPI.Products.GetProductsByCategory
 
         public async Task<GetProductsByCategoryResult> Handle(GetProductsByCategoryQuery query, CancellationToken cancellationToken)
         {
-            logger.LogInformation($"GetProductsByCategoryQueryHandler.Handle called with Query: {query}");
-
             var products = await session.Query<Product>().Where( p=>p.Category.Contains(query.Category)).ToListAsync(cancellationToken).ConfigureAwait(false);
             
             return new GetProductsByCategoryResult(products);

@@ -20,8 +20,6 @@ namespace CatalogAPI.Products.DeleteProduct
 
         public async Task<DeleteProductResult> Handle(DeleteProductCommand command, CancellationToken cancellationToken)
         {
-            logger.LogInformation($"DeleteProductCommandHandler.Handle called with Command: {command}");
-
             var product = await session.LoadAsync<Product>(command.Id,cancellationToken).ConfigureAwait(false);
             if (product is null)
             {
