@@ -22,7 +22,10 @@ builder.Services.AddMarten(opt =>
     opt.AutoCreateSchemaObjects = Weasel.Core.AutoCreate.CreateOrUpdate;
 })
     .UseLightweightSessions();
-
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.InitializeMartenWith<CatalogInitialData>();
+}
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 var app = builder.Build();
 
