@@ -1,4 +1,6 @@
 ﻿
+using CatalogAPI.Products.GetProductsByCategory;
+
 namespace CatalogAPI.Products.GetProducts
 {
 
@@ -6,7 +8,7 @@ namespace CatalogAPI.Products.GetProducts
     public record GetProductsResult(IEnumerable<Product> Products);
 
 
-    public class GetProductsQueryHandler(IDocumentSession session, ILogger<GetProductsQuery> logger) : IQueryHandler<GetProductsQuery, GetProductsResult>
+    public class GetProductsQueryHandler(IDocumentSession session) : IQueryHandler<GetProductsQuery, GetProductsResult>
     {
 
         public async Task<GetProductsResult> Handle(GetProductsQuery query, CancellationToken cancellationToken)

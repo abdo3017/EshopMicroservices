@@ -18,7 +18,7 @@ namespace CatalogAPI.Products.CreateProduct
         }
     }
 
-    public class CreateProductCommandHandler(IDocumentSession session, ILogger<GetProductsByCategoryQuery> logger) 
+    public class CreateProductCommandHandler(IDocumentSession session) 
         : ICommandHandler<CreateProductCommand, CreateProductResult>
     {
 
