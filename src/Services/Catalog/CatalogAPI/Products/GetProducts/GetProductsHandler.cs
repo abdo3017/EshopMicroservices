@@ -1,6 +1,4 @@
 ﻿
-using CatalogAPI.Products.GetProductsByCategory;
-
 namespace CatalogAPI.Products.GetProducts
 {
 
